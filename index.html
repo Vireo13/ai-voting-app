@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Are You Pro-AI or Anti-AI?</title>
+
+    <style>
+/* 1. Apply a clean font to the entire page and reset default margins */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light gray background for the whole page */
+}
+
+/* 2. Make the container fill the entire browser window */
+.voting-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* vh stands for viewport height (100% of the screen) */
+    align-items: stretch; /* Forces columns to stretch top-to-bottom */
+}
+
+.pro-side, .anti-side {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed from center to flex-start (TOP) */
+    align-items: center;     
+    padding: 40px;
+    transition: background-color 0.3s ease; 
+}
+
+/* Slightly transparent green for the left side */
+.pro-side {
+    background-color: rgba(0, 255, 0, 0.4); 
+}
+
+/* Slightly transparent red for the right side */
+.anti-side {
+    background-color: rgba(255, 0, 0, 0.4); 
+}
+
+/* 4. Style the center floating box */
+.total-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed from center to flex-start (TOP) */
+    align-items: center;
+    padding: 30px 50px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    z-index: 10; 
+    min-width: 200px;
+    text-align: center;
+}
+
+/* Bonus: Clean styling for modern-looking buttons */
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    background-color: #555; /* Makes button change color when hovered */
+}
+    </style>
+</head>
+<body>
+
+    <div class="voting-container">
+
+        <div class="pro-side">
+            <h1>Pro-AI</h1>
+            <p id="pro-display">0 Votes</p>
+            <button onclick="votePro()">Vote Pro-AI</button>
+        </div>
+
+        <div class="total-box">
+            <h1>Total Votes</h1>
+            <p id="total-display">0</p>
+        </div>
+        
+        <div class="anti-side">
+            <h1>Anti-AI</h1>
+            <p id="anti-display">0 Votes</p>
+            <button onclick="voteAnti()">Vote Anti-AI</button>
+        </div>
+    
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>
